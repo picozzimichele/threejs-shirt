@@ -16,10 +16,23 @@ import CustomButton from "../components/CustomButton";
 export default function Customizer() {
     const snap = useSnapshot(state);
     const [file, setFile] = useState("");
-    const [prompt, usePrompt] = useState("");
+    const [prompt, setPrompt] = useState("");
     const [generateImg, setGenerateImg] = useState(false);
     const [activeEditorTab, setActiveEditorTab] = useState("");
     const [activeFilterTab, setActiveFilterTab] = useState({ logoShirt: true, stylishShirt: false });
+
+    const handleSubmit = async (type) => {
+        if (!prompt) return alert("Please enter a prompt");
+
+        try {
+            //call our backend to generate AI image
+        } catch (error) {
+            alert(error);
+        } finally {
+            setGenerateImg(false);
+            setActiveEditorTab("");
+        }
+    };
 
     const handleActiveFilterTab = (tabName) => {
         switch (tabName) {
@@ -66,7 +79,7 @@ export default function Customizer() {
             case "filepicker":
                 return <FilePicker file={file} setFile={setFile} readFile={readFile} />;
             case "aipicker":
-                return <AIPicker />;
+                return <AIPicker prompt={prompt} setPrompt={setPrompt} generateImg={generateImg} handleSubmit={handleSubmit} />;
             default:
                 return null;
         }
