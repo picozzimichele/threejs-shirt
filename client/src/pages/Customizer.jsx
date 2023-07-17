@@ -15,6 +15,24 @@ import CustomButton from "../components/CustomButton";
 
 export default function Customizer() {
     const snap = useSnapshot(state);
+    const [file, useFile] = useState(null);
+    const [prompt, usePrompt] = useState("");
+    const [generateImg, setGenerateImg] = useState(false);
+    const [activeEditorTab, setActiveEditorTab] = useState("");
+    const [activeFilterTab, setActiveFilterTab] = useState({ logoShirt: true, stylishShirt: false });
+
+    const generateTabContent = () => {
+        switch (activeEditorTab) {
+            case "colorpicker":
+                return <ColorPicker />;
+            case "filepicker":
+                return <FilePicker />;
+            case "aipicker":
+                return <AIPicker />;
+            default:
+                return null;
+        }
+    };
     return (
         <AnimatePresence>
             {!snap.intro && (
@@ -23,8 +41,15 @@ export default function Customizer() {
                         <div className="flex items-center min-h-screen">
                             <div className="editortabs-container">
                                 {EditorTabs.map((tab, index) => (
-                                    <Tab tab={tab} key={index} handleClick={() => {}} />
+                                    <Tab
+                                        tab={tab}
+                                        key={index}
+                                        handleClick={() => {
+                                            setActiveEditorTab(tab.name);
+                                        }}
+                                    />
                                 ))}
+                                {generateTabContent()}
                             </div>
                         </div>
                     </motion.div>

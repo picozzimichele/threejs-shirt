@@ -17,7 +17,7 @@ export default function Home() {
                         <motion.div {...headTextAnimation}>
                             <h1 className="head-text">
                                 LET&apos;S
-                                <br className="hidden lg:block" />
+                                <br />
                                 DO IT.
                             </h1>
                         </motion.div>
