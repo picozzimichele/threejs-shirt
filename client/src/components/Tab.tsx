@@ -13,7 +13,7 @@ export default function Tab({ tab, isFilterTab, isActiveTab, handleClick }) {
             : { backgroundColor: "transparent", opacity: 1 };
 
     return (
-        <div style={activeStyles} onClick={handleClick} className={`tab-btn ${isFilterTab ? "rounded-full glassmorhism" : "rounded-4"}`} key={tab.name}>
+        <div style={activeStyles} onClick={handleClick} className={`tab-btn ${isActiveTab ? "rounded-full glassmorhism" : "rounded-4"}`} key={tab.name}>
             <img className={`${isFilterTab ? "w-2/3 h-2/3" : "h-11/12 w-11/12 object-contain"}`} src={tab.icon} alt={tab.name} />
         </div>
     );

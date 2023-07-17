@@ -33,6 +33,13 @@ export default function Customizer() {
                 state.isFullTexture = true;
                 state.isLogoTexture = false;
         }
+
+        setActiveFilterTab((prevState) => {
+            return {
+                ...prevState,
+                [tabName]: !prevState[tabName],
+            };
+        });
     };
 
     const handleDecals = (type, result) => {
@@ -93,8 +100,14 @@ export default function Customizer() {
                         />
                     </motion.div>
                     <motion.div className="filtertabs-container" {...slideAnimation("up")}>
-                        {FilterTabs.map((tab, index) => (
-                            <Tab tab={tab} key={index} handleClick={() => {}} isFilterTab="" isActiveTab="" />
+                        {FilterTabs.map((tab) => (
+                            <Tab
+                                tab={tab}
+                                key={tab.name}
+                                handleClick={() => handleActiveFilterTab(tab.name)}
+                                isFilterTab
+                                isActiveTab={activeFilterTab[tab.name]}
+                            />
                         ))}
                     </motion.div>
                 </>
