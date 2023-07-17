@@ -6,11 +6,11 @@ import Shirt from "./Shirt";
 
 export default function CanvasModel() {
     return (
-        <Canvas>
+        <Canvas className="w-full max-h-full transition-all ease-in" shadows camera={{ position: [0, 0, 0], fov: 25 }} gl={{ preserveDrawingBuffer: true }}>
             <ambientLight intensity={0.5} />
             <Environment preset="city" />
             <CameraRig>
-                {/* <Backdrop /> */}
+                <Backdrop />
                 <Center>
                     <Shirt />
                 </Center>

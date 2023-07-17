@@ -23,7 +23,7 @@ export default function Customizer() {
                         <div className="flex items-center min-h-screen">
                             <div className="editortabs-container">
                                 {EditorTabs.map((tab, index) => (
-                                    <Tab teb={tab} key={index} handleClick={() => {}} />
+                                    <Tab tab={tab} key={index} handleClick={() => {}} />
                                 ))}
                             </div>
                         </div>
@@ -38,7 +38,7 @@ export default function Customizer() {
                     </motion.div>
                     <motion.div className="filtertabs-container" {...slideAnimation("up")}>
                         {FilterTabs.map((tab, index) => (
-                            <Tab teb={tab} key={index} handleClick={() => {}} isFilterTab="" isActiveTab="" />
+                            <Tab tab={tab} key={index} handleClick={() => {}} isFilterTab="" isActiveTab="" />
                         ))}
                     </motion.div>
                 </>
