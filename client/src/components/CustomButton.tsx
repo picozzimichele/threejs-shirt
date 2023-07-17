@@ -14,7 +14,7 @@ export default function CustomButton({ type, title, customStyle, handleClick }) 
     };
 
     return (
-        <button onClick={handleClick} style={generateStlye(type)} className={`px-2 py-1.5 flex-1 rounded-md ${customStyle}`}>
+        <button onClick={handleClick} style={generateStlye(type)} className={`px-2 py-1.5 flex rounded-md ${customStyle}`}>
             {title}
         </button>
     );
