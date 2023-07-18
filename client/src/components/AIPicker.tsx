@@ -11,7 +11,7 @@ export default function AIPicker({ prompt, setPrompt, generatingImg, handleSubmi
                 ) : (
                     <>
                         <CustomButton customStyle="text-xs flex-1 justify-center" type="outline" title="AI Logo" handleClick={() => handleSubmit("logo")} />
-                        <CustomButton customStyle="text-xs flex-1 justify-center" type="filled" title="AI Full" handleClick={() => handleSubmit("full")} />
+                        <CustomButton customStyle="text-xs flex-1 justify-center" type="filled" title="AI Texture" handleClick={() => handleSubmit("full")} />
                     </>
                 )}
             </div>

@@ -14,7 +14,7 @@ export default function FilePicker({ file, setFile, readFile }) {
                 </div>
                 <div className="mt-4 flex flex-wrap gap-3">
                     <CustomButton type="outline" title="Logo" handleClick={() => readFile("logo")} customStyle="text-xs flex-1 justify-center" />
-                    <CustomButton type="filled" title="Full" handleClick={() => readFile("full")} customStyle="text-xs flex-1 justify-center" />
+                    <CustomButton type="filled" title="Texture" handleClick={() => readFile("full")} customStyle="text-xs flex-1 justify-center" />
                 </div>
             </div>
         </div>
