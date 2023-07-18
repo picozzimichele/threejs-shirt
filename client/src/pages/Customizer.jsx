@@ -92,7 +92,7 @@ export default function Customizer() {
             case "filepicker":
                 return <FilePicker file={file} setFile={setFile} readFile={readFile} />;
             case "aipicker":
-                return <AIPicker prompt={prompt} setPrompt={setPrompt} generateImg={generateImg} handleSubmit={handleSubmit} />;
+                return <AIPicker prompt={prompt} setPrompt={setPrompt} generatingImg={generateImg} handleSubmit={handleSubmit} />;
             default:
                 return null;
         }
